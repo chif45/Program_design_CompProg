@@ -1,0 +1,9 @@
+﻿  OpenCloseF.cpp
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(9,1): warning C4297: OpenFiles: ожидается, что функция не будет выдавать исключения, но она это делает
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(9,1): message : Функция типа extern "C", указан параметр /EHc
+     Создается библиотека D:\3курс\ПТППОВС\2лаба\Laba2\Release\DLL_OpenCloseFiles.lib и объект D:\3курс\ПТППОВС\2лаба\Laba2\Release\DLL_OpenCloseFiles.exp
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 152 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  DLL_OpenCloseFiles.vcxproj -> D:\3курс\ПТППОВС\2лаба\Laba2\Release\DLL_OpenCloseFiles.dll

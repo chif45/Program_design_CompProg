@@ -1,0 +1,19 @@
+﻿  OpenCloseF.cpp
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(11,1): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(11,1): error C2065: linker: необъявленный идентификатор
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(11,1): error C2457: __FUNCTION__: встроенный макрос не может находиться вне тела функции
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(11,1): error C2457: __FUNCDNAME__: встроенный макрос не может находиться вне тела функции
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(11,1): error C3688: недопустимый литеральный суффикс "__FSTREXP"; не удалось найти литеральный оператор или шаблон литерального оператора "operator ""__FSTREXP"
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(11,17): error C2059: синтаксическая ошибка: std::ifstream
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(11,65): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(11,65): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(21,1): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(21,1): error C2374: comment: переопределение; множественная инициализация
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(11): message : см. объявление "comment"
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(21,1): error C2065: linker: необъявленный идентификатор
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(21,1): error C2457: __FUNCTION__: встроенный макрос не может находиться вне тела функции
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(21,1): error C2457: __FUNCDNAME__: встроенный макрос не может находиться вне тела функции
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(21,1): error C3688: недопустимый литеральный суффикс "__FSTREXP"; не удалось найти литеральный оператор или шаблон литерального оператора "operator ""__FSTREXP"
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(21,12): error C2062: тип "void" не требуется
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(21,55): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+D:\3курс\ПТППОВС\2лаба\Laba2\DLL_OpenCloseFiles\OpenCloseF.cpp(21,55): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)

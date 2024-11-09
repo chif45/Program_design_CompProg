@@ -1,0 +1,5 @@
+﻿     Создается библиотека D:\3курс\ПТППОВС\2лаба\Laba2\Debug\DLLSearch.lib и объект D:\3курс\ПТППОВС\2лаба\Laba2\Debug\DLLSearch.exp
+DLLSearch.exp : warning LNK4070: директива /OUT:DLLSearch.dll в .EXP отличается от имени выходного файла "D:\3курс\ПТППОВС\2лаба\Laba2\Debug\DLLSearch.exe"; директива игнорируется
+D:\3курс\ПТППОВС\2лаба\Laba2\Debug\DLLSearch.exe : warning LNK4086: точка входа "_mainCRTStartup" не является __stdcall с аргументами из 12 байт; образ нельзя запустить
+MSVCRTD.lib(exe_main.obj) : error LNK2019: ссылка на неразрешенный внешний символ _main в функции "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ).
+D:\3курс\ПТППОВС\2лаба\Laba2\Debug\DLLSearch.exe : fatal error LNK1120: неразрешенных внешних элементов: 1

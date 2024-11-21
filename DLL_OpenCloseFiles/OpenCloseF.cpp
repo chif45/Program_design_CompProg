@@ -2,6 +2,7 @@
 #include <iostream>
 #include "OpenCloseF.h"
 
+
 extern "C" OpenCloseF_API std::ifstream * OpenFiles(const std::string & filePath) {
     auto* file = new std::ifstream(filePath);
     if (!file->is_open()) {

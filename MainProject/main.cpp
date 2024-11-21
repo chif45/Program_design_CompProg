@@ -4,6 +4,44 @@
 #include <fstream>
 #include <locale.h>
 #include "..\DLL_OpenCloseFiles\OpenCloseF.h"
+#include <thread>
+#include <mutex>
+
+std::mutex contents_mutex;
+
+struct contentFile {
+    std::string content;
+    std::string path;
+};
+
+std::list<contentFile>contents;
+
+std::list<std::thread> threads;
+
+void OpenGetContentClose(std::string path) {
+    try {
+        std::ifstream* file = OpenFiles(path);
+        if (file == nullptr) {
+            std::cerr << "Ошибка при открытии файла: " << path << std::endl;
+            CloseFiles(file);
+            return;
+        }
+
+    }
+    catch (std::runtime_error) {
+        std::cerr << ("Данного файла не существует") << path << std::endl;
+        return;
+    }
+
+    std::ifstream* file = OpenFiles(path);
+    std::string content((std::istreambuf_iterator<char>(*file)), std::istreambuf_iterator<char>());
+    CloseFiles(file);
+
+    contents_mutex.lock();
+    contents.push_back({ content, path });
+    contents_mutex.unlock();
+}
+
 
 int main(int argc, char* argv[]) {
     setlocale(LC_ALL, "RUS");
@@ -34,37 +72,25 @@ int main(int argc, char* argv[]) {
     printe printelem = (printe)GetProcAddress(loadSearch, "printElements");
     findfiles findFilesWithExtensionHTML = (findfiles)GetProcAddress(loadSearch, "findFilesWithExtension");
 
-    if (!findFilesWithExtensionHTML) {
-        std::cerr << "Ошибка получения адреса функции findFilesWithExtension" << std::endl;
-        FreeLibrary(loadSearch);
-        return 1;
-    }
-
     files = findFilesWithExtensionHTML(path,".html");
     printelem(files, "Найденные файлы");
 
     while(!files.empty()) {
-        std::cout << "------------------------------\n";
-        std::cout << "Поиск в файле: "<<files.front() << std::endl;
-        try {
-            std::ifstream* file = OpenFiles(files.front());
-            if (file == nullptr) {
-                std::cerr << "Ошибка при открытии файла: " << path << std::endl;
-                CloseFiles(file);
-                return 1;
-            }
-
-        }
-        catch (std::runtime_error) {
-            std::cerr << ("Данного файла не существует") << path << std::endl;
-            return 1;
-        }
-
-        std::ifstream* file = OpenFiles(files.front());
+        threads.emplace_back(OpenGetContentClose, files.front());
         files.pop_front();
-        std::string content((std::istreambuf_iterator<char>(*file)), std::istreambuf_iterator<char>());
-        CloseFiles(file);
-       
+    }
+    
+    for (auto& t : threads) {
+        if (t.joinable()) {
+            t.join();
+        }
+    }
+    
+    while(!contents.empty()) {
+        
+        std::cout <<"В файле: "<< contents.front().path << std::endl;
+        std::string content = contents.front().content;
+
         std::list<std::string>Paragraphs = extractParagraphs(content);
         std::list<std::string>Titles = extractTitles(content);
         std::list<std::string>BoldTexts = extractBoldText(content);
@@ -94,6 +120,8 @@ int main(int argc, char* argv[]) {
         Titles.clear();
         Paragraphs.clear();
         BoldTexts.clear();
+
+        contents.pop_front();
     }
     FreeLibrary(loadSearch);
 }
